@@ -1,4 +1,4 @@
-package com.mygdx.game;
+package com.LettersGame.LettersGame;
 
 import android.app.Activity;
 import android.media.MediaPlayer.OnCompletionListener;
@@ -10,7 +10,7 @@ import android.content.Intent;
 /**
  * Created by magda on 2016-04-13.
  */
-public class SplashScreen extends Activity implements OnCompletionListener
+public class AlphabetFilm extends Activity implements OnCompletionListener
 {
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -18,11 +18,12 @@ public class SplashScreen extends Activity implements OnCompletionListener
 
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.splash);
-        String fileName = "android.resource://"+  getPackageName() +"/"+R.raw.literki;
+        setContentView(R.layout.alphabet);
+        String fileName = "android.resource://"+  getPackageName() +"/"+ R.raw.literki;
 
         VideoView vv = (VideoView) this.findViewById(R.id.surface);
         vv.setVideoURI(Uri.parse(fileName));
+        vv.canSeekForward();
         vv.setOnCompletionListener(this);
         vv.start();
 

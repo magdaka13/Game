@@ -1,10 +1,10 @@
-package com.mygdx.game;
+package com.LettersGame.LettersGame;
 
 import android.os.Bundle;
 
+import com.FallingLettersGame.game.MainGame;
 import com.badlogic.gdx.backends.android.AndroidApplication;
 import com.badlogic.gdx.backends.android.AndroidApplicationConfiguration;
-import com.mygdx.game.MyGdxGame;
 
 public class AndroidLauncher extends AndroidApplication {
 	@Override
@@ -15,6 +15,6 @@ public class AndroidLauncher extends AndroidApplication {
 		AndroidApplicationConfiguration config = new AndroidApplicationConfiguration();
 		config.useAccelerometer = false;
 		config.useCompass = false;
-		initialize(new MyGdxGame(), config);
+		initialize(new MainGame(), config);
 	}
 }

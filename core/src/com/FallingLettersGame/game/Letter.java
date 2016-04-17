@@ -1,4 +1,4 @@
-package com.mygdx.game;
+package com.FallingLettersGame.game;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.*;
@@ -27,6 +27,14 @@ public final class Letter {
 
         letter = new Texture(Gdx.files.internal(filenames[i]));
         sound = new Gdx().audio.newSound(Gdx.files.internal(sounds[i]));
+
+    }
+
+
+    public void freeMem()
+    {
+        letter.dispose();
+        sound.dispose();
 
     }
 
