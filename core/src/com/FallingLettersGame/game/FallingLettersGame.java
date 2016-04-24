@@ -32,7 +32,7 @@ public class FallingLettersGame implements Screen {
 
         maxLetterNo=50;
         this.game=gam;
-        bucketImage = new Texture("bucket.png");
+        bucketImage = new Texture("owl.png");
 
         lettersRetangle = new Array<Rectangle>();
         letter = new Array<com.FallingLettersGame.game.Letter>();

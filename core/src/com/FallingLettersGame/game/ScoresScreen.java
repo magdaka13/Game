@@ -4,6 +4,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.Vector3;
 
 import java.util.*;
@@ -13,7 +14,8 @@ public class ScoresScreen implements Screen {
     final MainGame game;
     private long score;
 
-    OrthographicCamera camera;
+    private OrthographicCamera camera;
+private Texture gameImg;
 
     public ScoresScreen(final MainGame gam,long s) {
         game = gam;
@@ -22,20 +24,21 @@ public class ScoresScreen implements Screen {
         camera = new OrthographicCamera();
         camera.setToOrtho(false, 800, 480);
 
+        gameImg = new Texture("game.jpg");
     }
 
     @Override
     public void render(float delta) {
-        Gdx.gl.glClearColor(0, 0, 0.2f, 1);
+        Gdx.gl.glClearColor(1, 1, 1.0f, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
         camera.update();
         game.batch.setProjectionMatrix(camera.combined);
 
         game.batch.begin();
-        game.font.draw(game.batch, "Złapałeś " + score + " literek", 100, 150);
-        game.font.draw(game.batch, "Gram ", 10, 50);
-
+        game.font.draw(game.batch,  score + " literek", 200, 150);
+        //game.font.draw(game.batch, "Gram ", 10, 50);
+        game.batch.draw(gameImg,10,50);
         game.batch.end();
 
         if (Gdx.input.isTouched()) {

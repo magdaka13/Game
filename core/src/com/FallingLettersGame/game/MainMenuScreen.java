@@ -4,20 +4,27 @@ package com.FallingLettersGame.game;
         import com.badlogic.gdx.Screen;
         import com.badlogic.gdx.graphics.GL20;
         import com.badlogic.gdx.graphics.OrthographicCamera;
+        import com.badlogic.gdx.graphics.Texture;
         import com.badlogic.gdx.math.Vector3;
+
+        import javax.xml.soap.Text;
 
 public class MainMenuScreen implements Screen {
 
     final MainGame game;
-
-    OrthographicCamera camera;
+    private Texture gameImg;
+    private Texture resultsImg;
+    private  OrthographicCamera camera;
 
     public MainMenuScreen(final MainGame gam) {
         game = gam;
 
         camera = new OrthographicCamera();
         camera.setToOrtho(false, 800, 480);
-game.font.setColor(0,0,0,1);
+//game.font.setColor(0,0,0,1);
+
+        gameImg = new Texture("game.jpg");
+        resultsImg= new Texture("results.jpg");
     }
 
     @Override
@@ -29,8 +36,11 @@ game.font.setColor(0,0,0,1);
         game.batch.setProjectionMatrix(camera.combined);
 
         game.batch.begin();
-        game.font.draw(game.batch, "GRA", 100, 150);
-        game.font.draw(game.batch, "WYNIKI", 400, 150);
+        game.batch.draw(gameImg,100,150);
+        game.batch.draw(resultsImg,400,150);
+
+     //   game.font.draw(game.batch, "GRA", 100, 150);
+     //   game.font.draw(game.batch, "WYNIKI", 400, 150);
         game.batch.end();
 
         if (Gdx.input.isTouched()) {
@@ -40,7 +50,7 @@ game.font.setColor(0,0,0,1);
 
     //        Gdx.app.log("MG", touchPos.x + "");
             //GRA
-            if (((touchPos.x >=100)&&(touchPos.x<=200))&&((touchPos.y >=150)&&(touchPos.y<=160))) {
+            if (((touchPos.x >=100)&&(touchPos.x<=228))&&((touchPos.y >=160)&&(touchPos.y<=260))) {
                 Gdx.app.log("MG", touchPos.x + "");
 
                 game.setScreen(new FallingLettersGame(game));
@@ -48,8 +58,8 @@ game.font.setColor(0,0,0,1);
             }
 
             //WYNIKI
-            if (((touchPos.x >=400)&&(touchPos.x<=500))&&((touchPos.y >=150)&&(touchPos.y<=160))) {
-                Gdx.app.log("MG", touchPos.x + "");
+            if (((touchPos.x >=400)&&(touchPos.x<=628))&&((touchPos.y >=160)&&(touchPos.y<=282))) {
+                //Gdx.app.log("MG", touchPos.x + "");
 
                 game.setScreen(new ScoresScreen(game,0));
                 dispose();
@@ -80,6 +90,7 @@ game.font.setColor(0,0,0,1);
 
     @Override
     public void dispose() {
-
+       gameImg.dispose();
+        resultsImg.dispose();
     }
 }
