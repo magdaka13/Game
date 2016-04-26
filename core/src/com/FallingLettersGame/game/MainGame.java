@@ -3,6 +3,7 @@ package com.FallingLettersGame.game;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.FeedReaderDBHelper.FeedReader.SQLiteHelper;
 /**
  * Created by magda on 2016-04-17.
  */
@@ -10,6 +11,11 @@ public class MainGame extends Game {
 
     public SpriteBatch batch;
     public BitmapFont font;
+    private SQLiteHelper sQLiteHelper;
+
+    public MainGame(SQLiteHelper s) {
+        sQLiteHelper=s;
+    }
 
     public void create() {
         batch = new SpriteBatch();
