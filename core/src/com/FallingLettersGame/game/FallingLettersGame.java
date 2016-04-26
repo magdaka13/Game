@@ -69,7 +69,7 @@ public class FallingLettersGame implements Screen {
 
         game.batch.begin();
         game.font.setColor(0, 0, 0, 1);
-        game.font.draw(game.batch, "Złapanych literek: " + LettersCatched, 0, 480);
+        game.font.draw(game.batch, "" + LettersCatched, 0, 480);
         game.batch.draw(bucketImage, x, y);
         int z = 0;
         for (Rectangle letterRec : lettersRetangle) {

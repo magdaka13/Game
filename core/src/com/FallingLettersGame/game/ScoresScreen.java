@@ -46,7 +46,7 @@ private Texture gameImg;
             touchPos.set(Gdx.input.getX(), Gdx.input.getY(), 0);
             camera.unproject(touchPos);
 
-            if (((touchPos.x >=10)&&(touchPos.x<=100))&&((touchPos.y >=50)&&(touchPos.y<=60))) {
+            if (((touchPos.x >=10)&&(touchPos.x<=138))&&((touchPos.y >=50)&&(touchPos.y<=150))) {
 
                 game.setScreen(new MainMenuScreen(game));
                 dispose();

@@ -6,13 +6,17 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.FeedReaderDBHelper.FeedReader.SQLiteHelper;
+
 
 public class MainActivity extends Activity {
+private SQLiteHelper sQLiteHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        sQLiteHelper = new SQLiteHelper(MainActivity.this);
 
         Button b_demo=(Button)findViewById(R.id.btn_Demo);
         b_demo.setOnClickListener(new View.OnClickListener() {
