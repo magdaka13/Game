@@ -11,10 +11,14 @@ public class MainGame extends Game {
 
     public SpriteBatch batch;
     public BitmapFont font;
-    private SQLiteHelper sQLiteHelper;
+    private SQLiteHelper s;
 
     public MainGame(SQLiteHelper s) {
         sQLiteHelper=s;
+    }
+
+    public MainGame(com.FeedReaderDBHelper.FeedReader.SQLiteHelper sQLiteHelper) {
+        s=sQLiteHelper;
     }
 
     public void create() {
