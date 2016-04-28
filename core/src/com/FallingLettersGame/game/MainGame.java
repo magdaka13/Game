@@ -1,9 +1,10 @@
 package com.FallingLettersGame.game;
 
+import com.HighScoreDB.HighScoresDB;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.FeedReaderDBHelper.FeedReader.SQLiteHelper;
+//import com.HighscoresDB.SQLiteHelper;
 /**
  * Created by magda on 2016-04-17.
  */
@@ -11,17 +12,10 @@ public class MainGame extends Game {
 
     public SpriteBatch batch;
     public BitmapFont font;
-    private SQLiteHelper s;
-
-    public MainGame(SQLiteHelper s) {
-        sQLiteHelper=s;
-    }
-
-    public MainGame(com.FeedReaderDBHelper.FeedReader.SQLiteHelper sQLiteHelper) {
-        s=sQLiteHelper;
-    }
+    public HighScoresDB db;
 
     public void create() {
+        db=new HighScoresDB();
         batch = new SpriteBatch();
         //Use LibGDX's default Arial font.
         font = new BitmapFont();
@@ -36,6 +30,7 @@ public class MainGame extends Game {
     public void dispose() {
         batch.dispose();
         font.dispose();
+        db.dispose();
     }
 
 }

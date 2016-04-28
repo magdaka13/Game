@@ -13,12 +13,12 @@ import java.util.*;
 public class ScoresScreen implements Screen {
 
     final MainGame game;
-    private long score;
+    private int score;
 
     private OrthographicCamera camera;
 private Texture gameImg;
 
-    public ScoresScreen(final MainGame gam,long s) {
+    public ScoresScreen(final MainGame gam,int s) {
         game = gam;
         score=s;
 
@@ -26,18 +26,31 @@ private Texture gameImg;
         camera.setToOrtho(false, 800, 480);
 
         gameImg = new Texture("game.jpg");
+        game.db.UpdateRec(3,"Filip");
+        game.font.setColor(0,0,0,1);
     }
 
     @Override
     public void render(float delta) {
+        String[] strings;
+        int i;
+        strings=new String[4];
+
         Gdx.gl.glClearColor(1, 1, 1.0f, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
         camera.update();
         game.batch.setProjectionMatrix(camera.combined);
 
+        strings=game.db.SelectAll();
+
         game.batch.begin();
-        game.font.draw(game.batch,  score + " literek", 200, 150);
+
+        for (i=0;i<4;i++) {
+            game.font.draw(game.batch, strings[i], 200, 450-i*50);
+        }
+
+        //game.font.draw(game.batch,  score + " literek", 200, 150);
         //game.font.draw(game.batch, "Gram ", 10, 50);
         game.batch.draw(gameImg,10,50);
         game.batch.end();

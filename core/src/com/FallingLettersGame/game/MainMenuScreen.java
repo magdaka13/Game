@@ -39,8 +39,7 @@ public class MainMenuScreen implements Screen {
         game.batch.draw(gameImg,100,150);
         game.batch.draw(resultsImg,400,150);
 
-     //   game.font.draw(game.batch, "GRA", 100, 150);
-     //   game.font.draw(game.batch, "WYNIKI", 400, 150);
+
         game.batch.end();
 
         if (Gdx.input.isTouched()) {

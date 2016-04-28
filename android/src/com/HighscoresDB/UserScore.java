@@ -1,4 +1,4 @@
-package com.FeedReaderDBHelper.FeedReader;
+package com.HighscoresDB;
 
 /**
  * Created by magda on 2016-04-26.

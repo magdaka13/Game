@@ -1,4 +1,4 @@
-package com.FeedReaderDBHelper.FeedReader;
+package com.HighscoresDB;
 
 import android.content.ContentValues;
 import android.content.Context;

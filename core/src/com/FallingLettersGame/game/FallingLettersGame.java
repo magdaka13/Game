@@ -127,7 +127,7 @@ public class FallingLettersGame implements Screen {
 
         if ((generatedLetters>maxLetterNo) || (LettersCatched>maxLetterNo))
         {
-            game.setScreen(new ScoresScreen(game,LettersCatched));
+            game.setScreen(new ScoresScreen(game,(int)LettersCatched));
             dispose();
         }
 
