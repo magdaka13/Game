@@ -30,7 +30,7 @@ public class FallingLettersGame implements Screen {
 
     public FallingLettersGame(final MainGame gam) {
 
-        maxLetterNo=50;
+        maxLetterNo=5;
         this.game=gam;
         bucketImage = new Texture("owl.png");
 
@@ -127,7 +127,7 @@ public class FallingLettersGame implements Screen {
 
         if ((generatedLetters>maxLetterNo) || (LettersCatched>maxLetterNo))
         {
-            game.setScreen(new ScoresScreen(game,(int)LettersCatched));
+            game.setScreen(new ScoresScreenChooseUser(game,(int)LettersCatched));
             dispose();
         }
 

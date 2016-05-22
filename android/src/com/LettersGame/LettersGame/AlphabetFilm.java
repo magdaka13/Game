@@ -17,13 +17,14 @@ public class AlphabetFilm extends Activity {
     //    private FrameLayout mContentView,mCustomViewContainer;
     private WebView webView;
     final Activity activity = this;
-public Toast T;
+public Toast T,Msg;
 
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
 
         T=new Toast(this);
+        Msg=T.makeText(AlphabetFilm.this, "Czekaj",Toast.LENGTH_SHORT );
         super.onCreate(savedInstanceState);
         setContentView(R.layout.alphabet);
 
@@ -72,18 +73,16 @@ public Toast T;
             }
 
             public void onProgressChanged(WebView view, int progress) {
-                //        activity.setTitle("Czekaj...");
-                //T.makeText(AlphabetFilm.this, "Czekaj", Toast.LENGTH_LONG).show();
 
                 activity.setProgress(progress * 100);
                 if (progress == 100) {
                     activity.setTitle("Piosenka");
-                    T.cancel();
+                    Msg.cancel();
                 }
 
                 if (progress<100)
                  {
-                    T.makeText(AlphabetFilm.this, "Czekaj", Toast.LENGTH_SHORT).show();
+                    Msg.show();
 
                 }
             }
@@ -95,6 +94,8 @@ public Toast T;
         Button b_menu=(Button) findViewById(R.id.btn_back);
         b_menu.setOnClickListener(new View.OnClickListener() {
                                       public void onClick(View v) {
+                                          Msg.cancel();
+
                                           Intent intent = new Intent(AlphabetFilm.this, MainActivity.class);
                                           startActivity(intent);
                                       }
@@ -103,7 +104,12 @@ public Toast T;
         );
       }
 
+@Override
+public void onBackPressed()
+    {
+        Msg.cancel();
 
+    }
 
 
 }

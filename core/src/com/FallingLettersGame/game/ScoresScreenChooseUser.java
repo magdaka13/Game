@@ -7,31 +7,26 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.Vector3;
 
-
-import java.util.*;
-
-public class ScoresScreen implements Screen {
+public class ScoresScreenChooseUser implements Screen {
 
     final MainGame game;
     private int score;
 
     private OrthographicCamera camera;
-private Texture gameImg;
+private Texture user1,user2,user3,user4;
 
-    public ScoresScreen(final MainGame gam,int s) {
+    public ScoresScreenChooseUser(final MainGame gam, int s) {
         game = gam;
         score=s;
 
         camera = new OrthographicCamera();
         camera.setToOrtho(false, 800, 480);
 
-        gameImg = new Texture("game.jpg");
+        user1 = new Texture("user1.jpg");
+        user2 = new Texture("user2.jpg");
+        user3 = new Texture("user3.jpg");
+        user4 = new Texture("user4.jpg");
 
-      ///  if (score<>-1)
-       // {
-         //   game.db.UpdateRec(score, "Filip");
-       // }
-        game.font.setColor(0,0,0,1);
     }
 
     @Override
@@ -46,19 +41,20 @@ private Texture gameImg;
         camera.update();
         game.batch.setProjectionMatrix(camera.combined);
 
-        strings=game.db.SelectAll();
+     //   strings=game.db.SelectAll();
 
         game.batch.begin();
 
-       // Gdx.app.log("MG", strings.length + "");
-
-        for (i=0;i<strings.length;i++) {
-            game.font.draw(game.batch, strings[i], 200, 450-i*50);
-        }
+       // for (i=0;i<4;i++) {
+        //    game.font.draw(game.batch, strings[i], 200, 450-i*50);
+       // }
 
         //game.font.draw(game.batch,  score + " literek", 200, 150);
         //game.font.draw(game.batch, "Gram ", 10, 50);
-        game.batch.draw(gameImg,10,50);
+        game.batch.draw(user1,10,50);
+        game.batch.draw(user2,30,50);
+        game.batch.draw(user3,50,50);
+        game.batch.draw(user4,70,50);
         game.batch.end();
 
         if (Gdx.input.isTouched()) {
@@ -96,6 +92,9 @@ private Texture gameImg;
 
     @Override
     public void dispose() {
-
+user1.dispose();
+        user2.dispose();
+        user3.dispose();
+        user4.dispose();
     }
 }

@@ -42,16 +42,16 @@ public class HighScoresDB {
 
         Gdx.app.log("HighScoresDB", "created successfully");
 
-        /*
+
         try {
-     //       dbHandler.execSQL("INSERT INTO HighScores ('user','score') VALUES ('Filip',0)");
-  //          dbHandler.execSQL("INSERT INTO HighScores ('user','score') VALUES ('Borys',0)");
-    //        dbHandler.execSQL("INSERT INTO HighScores ('user','score') VALUES ('Magda',0)");
-      //      dbHandler.execSQL("INSERT INTO HighScores ('user','score') VALUES ('Szymon',0)");
+            dbHandler.execSQL("INSERT INTO HighScores ('user','score') VALUES ('Filip',0)");
+            dbHandler.execSQL("INSERT INTO HighScores ('user','score') VALUES ('Borys',0)");
+            dbHandler.execSQL("INSERT INTO HighScores ('user','score') VALUES ('Magda',0)");
+            dbHandler.execSQL("INSERT INTO HighScores ('user','score') VALUES ('Szymon',0)");
         } catch (SQLiteGdxException e) {
             e.printStackTrace();
         }
-        */
+
     }
 
     public void UpdateRec(int s,String u)
@@ -78,7 +78,8 @@ public class HighScoresDB {
         int i=0;
         while (cursor.next()) {
 
-            Gdx.app.log("HighScores fromDB", String.valueOf(cursor.getString(1))+" "+String.valueOf(cursor.getString(2)));
+
+            Gdx.app.log("HighScores fromDB i=", i+" "+String.valueOf(cursor.getString(1))+" "+String.valueOf(cursor.getString(2)));
             scores[i]=String.valueOf(cursor.getString(1))+"               "+String.valueOf(cursor.getString(2));
             i=i+1;
         }
@@ -89,6 +90,8 @@ public class HighScoresDB {
     public void dispose()
     {
         try {
+            dbHandler.execSQL("drop table HighScores");
+
             dbHandler.closeDatabase();
         } catch (SQLiteGdxException e) {
             e.printStackTrace();
