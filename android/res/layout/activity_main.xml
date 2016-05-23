@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/btn_Demo"
         android:height="75dp"
-        android:width="50dp"
+        android:width="100dp"
         android:textSize="30sp"
         android:background="@drawable/owl"
         android:layout_alignParentBottom="true"
@@ -20,11 +20,12 @@
         android:paddingBottom="0dp"
         android:typeface="sans"
         android:textStyle="bold"
-        android:gravity="center_vertical"
-         />
+        android:gravity="center_vertical|top"
+        android:text="Ucz"
+        android:textAlignment="inherit" />
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:id="@+id/btn_game"
         android:height="75dp"
@@ -36,11 +37,12 @@
         android:paddingBottom="0dp"
         android:typeface="sans"
         android:textStyle="bold"
-        android:gravity="center_vertical"
+        android:gravity="center_vertical|top"
         android:paddingLeft="200dp"
         android:layout_below="@+id/imageView"
         android:layout_alignRight="@+id/imageView"
-        android:layout_alignEnd="@+id/imageView" />
+        android:layout_alignEnd="@+id/imageView"
+        android:text="Graj" />
 
     <ImageView
         android:layout_width="match_parent"

@@ -98,6 +98,7 @@ public Toast T,Msg;
 
                                           Intent intent = new Intent(AlphabetFilm.this, MainActivity.class);
                                           startActivity(intent);
+                                          finish();
                                       }
                                   }
 
@@ -108,6 +109,9 @@ public Toast T,Msg;
 public void onBackPressed()
     {
         Msg.cancel();
+        Intent intent = new Intent(AlphabetFilm.this, MainActivity.class);
+        startActivity(intent);
+        finish();
 
     }
 

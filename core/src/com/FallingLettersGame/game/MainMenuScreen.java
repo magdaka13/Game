@@ -25,6 +25,7 @@ public class MainMenuScreen implements Screen {
 
         gameImg = new Texture("game.jpg");
         resultsImg= new Texture("results.jpg");
+        game.font.setColor(0,0,0,1);
     }
 
     @Override
@@ -36,7 +37,10 @@ public class MainMenuScreen implements Screen {
         game.batch.setProjectionMatrix(camera.combined);
 
         game.batch.begin();
+
+        game.font.draw(game.batch, "Gra", 100, 150);
         game.batch.draw(gameImg,100,150);
+        game.font.draw(game.batch, "Wyniki", 400, 150);
         game.batch.draw(resultsImg,400,150);
 
 
