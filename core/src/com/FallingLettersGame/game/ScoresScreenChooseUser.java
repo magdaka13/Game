@@ -51,10 +51,10 @@ private Texture user1,user2,user3,user4;
 
         //game.font.draw(game.batch,  score + " literek", 200, 150);
         game.font.draw(game.batch, "Kim jestes? ", 10, 450);
-        game.batch.draw(user1,10,50);
-        game.batch.draw(user2,158,50);
-        game.batch.draw(user3,296,50);
-        game.batch.draw(user4,425,50);
+        game.batch.draw(user1,10,150);
+        game.batch.draw(user2,158,150);
+        game.batch.draw(user3,296,150);
+        game.batch.draw(user4,425,150);
         game.batch.end();
 
         if (Gdx.input.isTouched()) {
@@ -63,7 +63,7 @@ private Texture user1,user2,user3,user4;
             camera.unproject(touchPos);
 
             //user1
-            if (((touchPos.x >=10)&&(touchPos.x<=148))&&((touchPos.y >=50)&&(touchPos.y<=120))) {
+            if (((touchPos.x >=10)&&(touchPos.x<=148))&&((touchPos.y >=150)&&(touchPos.y<=220))) {
 
                 game.db.UpdateRec(score, "Filip");
                 game.setScreen(new ScoresScreen(game,score));
@@ -71,7 +71,7 @@ private Texture user1,user2,user3,user4;
             }
 
             //user2
-            if (((touchPos.x >=158)&&(touchPos.x<=286))&&((touchPos.y >=50)&&(touchPos.y<=120))) {
+            if (((touchPos.x >=158)&&(touchPos.x<=286))&&((touchPos.y >=150)&&(touchPos.y<=220))) {
 
                 game.db.UpdateRec(score, "Borys");
                 game.setScreen(new ScoresScreen(game,score));
@@ -79,7 +79,7 @@ private Texture user1,user2,user3,user4;
             }
 
             //user3
-            if (((touchPos.x >=296)&&(touchPos.x<=415))&&((touchPos.y >=50)&&(touchPos.y<=120))) {
+            if (((touchPos.x >=296)&&(touchPos.x<=415))&&((touchPos.y >=150)&&(touchPos.y<=220))) {
 
                 game.db.UpdateRec(score, "Magda");
                 game.setScreen(new ScoresScreen(game,score));
@@ -87,7 +87,7 @@ private Texture user1,user2,user3,user4;
             }
 
             //user4
-            if (((touchPos.x >=425)&&(touchPos.x<=500))&&((touchPos.y >=50)&&(touchPos.y<=120))) {
+            if (((touchPos.x >=425)&&(touchPos.x<=500))&&((touchPos.y >=150)&&(touchPos.y<=220))) {
 
                 game.db.UpdateRec(score, "Szymon");
                 game.setScreen(new ScoresScreen(game,score));

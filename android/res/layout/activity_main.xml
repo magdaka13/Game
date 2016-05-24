@@ -25,12 +25,12 @@
         android:textAlignment="inherit" />
 
     <Button
-        android:layout_width="300dp"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:id="@+id/btn_game"
         android:height="75dp"
         android:width="300dp"
-        android:textSize="30dp"
+        android:textSize="30sp"
         android:background="@drawable/game"
         android:capitalize="sentences"
         android:ellipsize="none"
@@ -38,11 +38,12 @@
         android:typeface="sans"
         android:textStyle="bold"
         android:gravity="center_vertical|top"
-        android:paddingLeft="200dp"
-        android:layout_below="@+id/imageView"
-        android:layout_alignRight="@+id/imageView"
         android:layout_alignEnd="@+id/imageView"
-        android:text="Graj" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:textAlignment="inherit"
+        android:paddingLeft="80dp"
+        android:layout_toLeftOf="@+id/btn_Demo" />
 
     <ImageView
         android:layout_width="match_parent"
@@ -57,5 +58,19 @@
         android:paddingTop="0dp"
         android:paddingBottom="50dp"
         android:background="@drawable/literki" />
+
+    <TextView
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:text="Graj"
+        android:id="@+id/textView"
+        android:textColor="#000000"
+        android:textSize="30dp"
+        android:layout_marginRight="109dp"
+        android:layout_marginEnd="109dp"
+        android:layout_alignTop="@+id/btn_game"
+        android:layout_alignRight="@+id/btn_game"
+        android:layout_alignEnd="@+id/btn_game"
+        android:textStyle="bold" />
 
 </RelativeLayout>

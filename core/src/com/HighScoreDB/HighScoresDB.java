@@ -71,7 +71,7 @@ public class HighScoresDB {
         DatabaseCursor cursor = null;
 
         try {
-            cursor = dbHandler.rawQuery("SELECT * FROM HighScores order by score");
+            cursor = dbHandler.rawQuery("SELECT * FROM HighScores order by score desc");
         } catch (SQLiteGdxException e) {
             e.printStackTrace();
         }
@@ -80,7 +80,7 @@ public class HighScoresDB {
 
 
             Gdx.app.log("HighScores fromDB i=", i+" "+String.valueOf(cursor.getString(1))+" "+String.valueOf(cursor.getString(2)));
-            scores[i]=String.valueOf(cursor.getString(1))+"               "+String.valueOf(cursor.getString(2));
+            scores[i]=String.valueOf(cursor.getString(1))+" "+String.valueOf(cursor.getString(2));
             i=i+1;
         }
 

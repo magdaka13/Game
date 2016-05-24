@@ -30,7 +30,7 @@ public class FallingLettersGame implements Screen {
 
     public FallingLettersGame(final MainGame gam) {
 
-        maxLetterNo=5;
+        maxLetterNo=50;
         this.game=gam;
         bucketImage = new Texture("owl.png");
 

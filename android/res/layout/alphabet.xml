@@ -21,7 +21,8 @@
         android:layout_weight="0.23"
         android:longClickable="false"
         android:background="#ffffff"
-        android:textSize="50dp" />
+        android:textSize="25dp"
+        android:layout_margin="0dp" />
 
 
 </LinearLayout>
